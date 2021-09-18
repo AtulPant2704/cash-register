@@ -9,10 +9,14 @@ const availableNotes = [2000, 500, 100, 20, 10, 5, 1]
 checkButton.addEventListener("click", function validateAmount() {
     hideMessage();
     if (billAmount.value > 0) {
-        if (cashGiven.value >= billAmount.value) {
+        if (Number(cashGiven.value) >= Number(billAmount.value)) {
+            console.log("greater");
             const amountToBeReturned = cashGiven.value - billAmount.value;
             calculateChange(amountToBeReturned);
         } else {
+            console.log("smaller");
+            console.log("cash Given= " + cashGiven.value);
+            console.log("Bill AMount= " + billAmount.value);
             showMessage("Do you wanna wash plates?")
         }
     } else {
