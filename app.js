@@ -7,6 +7,7 @@ const noOfNotes = document.querySelectorAll(".no-of-notes")
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1]
 
 checkButton.addEventListener("click", function validateAmount() {
+    clearNoOfNotes();
     hideMessage();
     if (billAmount.value > 0) {
         if (Number(cashGiven.value) >= Number(billAmount.value)) {
@@ -14,9 +15,6 @@ checkButton.addEventListener("click", function validateAmount() {
             const amountToBeReturned = cashGiven.value - billAmount.value;
             calculateChange(amountToBeReturned);
         } else {
-            console.log("smaller");
-            console.log("cash Given= " + cashGiven.value);
-            console.log("Bill AMount= " + billAmount.value);
             showMessage("Do you wanna wash plates?")
         }
     } else {
@@ -31,6 +29,12 @@ function calculateChange(amountToBeReturned) {
         );
         amountToBeReturned = amountToBeReturned % availableNotes[i];
         noOfNotes[i].innerText = numberOfNotes;
+    }
+}
+
+function clearNoOfNotes(){
+    for(let i=0;i<availableNotes.length;i++){
+        noOfNotes[i].innerText = "";
     }
 }
 

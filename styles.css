@@ -41,7 +41,6 @@ label {
     padding: 0.8rem;
     margin-bottom: 1.5rem;
     font-size: medium;
-
 }
 
 button {
@@ -54,7 +53,7 @@ button {
     border: none;
 }
 
-.errorMsg{
+#errorMsg{
     color:white;
 }
 
