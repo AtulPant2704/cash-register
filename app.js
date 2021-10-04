@@ -14,8 +14,10 @@ checkButton.addEventListener("click", function validateAmount() {
             console.log("greater");
             const amountToBeReturned = cashGiven.value - billAmount.value;
             calculateChange(amountToBeReturned);
+        }else if(Number(cashGiven.value) <=0){
+            showMessage("Cash given should be greater then zero?");
         } else {
-            showMessage("Do you wanna wash plates?")
+            showMessage("Do you wanna wash plates?");
         }
     } else {
         showMessage("Invalid Bill Amount");
